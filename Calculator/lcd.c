@@ -6,7 +6,7 @@
  *
  * Description: Source file for the LCD driver
  *
- * Author: Mohamed Tarek
+ * Author: Ali Sadek
  *
  *******************************************************************************/
 
@@ -122,13 +122,7 @@ void LCD_displayString(const char *Str)
 		LCD_displayCharacter(Str[i]);
 		i++;
 	}
-	/***************** Another Method ***********************
-	while((*Str) != '\0')
-	{
-		LCD_displayCharacter(*Str);
-		Str++;
-	}		
-	*********************************************************/
+
 }
 
 void LCD_goToRowColumn(uint8 row,uint8 col)
@@ -171,5 +165,5 @@ void LCD_integerToString(uint64 data)
 
 void LCD_clearScreen(void)
 {
-	LCD_sendCommand(CLEAR_COMMAND); //clear display 
+	LCD_sendCommand(CLEAR_COMMAND); /*clear display */
 }
