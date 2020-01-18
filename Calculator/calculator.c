@@ -1,19 +1,27 @@
-/*
- * Calculator.c
+ /******************************************************************************
  *
- *  Created on: Jan 2, 2020
- *      Author: aly_s
- */
+ * Module: CALCULATOR
+ *
+ * File Name: calculator.c
+ *
+ * Description: Source file for the calculator driver
+ *
+ * Author: Ali Sadek
+ *
+ *******************************************************************************/
 
 #include "calculator.h"
 
+/****************************Variable Declarations******************************/
 
 uint8 key;
 uint8 mul=0, add=0, sub=0, divide=0, equal;
 uint32 operand[2];
 uint32 lastNum=0;
 
-
+/**********************************************************************************
+* 				Functions Definitions				  *
+* ********************************************************************************/
 void mult(uint32 x, uint32 y)
 {
 	mul=0;
@@ -46,6 +54,7 @@ uint32 *arrPtr = operand;
 	while(1)
 	{
 		key=KeyPad_getPressedKey();
+		/*New Button Every 500ms*/
 		_delay_ms(500);
 
 		if((key<=9) && (key>=0))
